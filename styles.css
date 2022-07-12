@@ -1,0 +1,101 @@
+*{
+    margin: 0%;
+}
+.container{
+    display: flex;
+    padding: 2rem;
+    background-color: black;
+    height: 100vh;
+    
+}
+.panel{
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 3.5rem;
+    color: rgb(246, 243, 243);
+    font-size: 1.5rem;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    transition: all 700ms ease-in;
+    padding-left: 2rem;
+}
+
+#panel-1{
+    background-image: url(https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+#panel-2{
+    background-image: url(https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+#panel-3{
+    background-image: url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80);
+}
+#panel-4{
+    background-image: url(https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
+}
+#panel-5{
+    background-image: url(https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+}
+.panel.active{
+    flex: 5;
+}
+.light{
+    font-size: 2rem;
+    color: var(--var-color);
+    position: relative;
+    font-weight: bold;
+}
+.light::before{
+    position: absolute;
+    content: attr(data-text);
+    text-shadow: 0px 0px 20px var(--var-color);
+    filter: blur(10px) brightness(0);
+    animation: flicker 2s linear forwards;
+    animation-delay: 1s;
+}
+@keyframes flicker {
+    0% {
+        filter: blur(5px) brightness(1);
+    }
+    3% {
+        filter: blur(5px) brightness(0);
+    }
+    6% {
+        filter: blur(5px) brightness(0);
+    }
+    7% {
+        filter: blur(5px) brightness(1);
+    }
+    8% {
+        filter: blur(5px) brightness(0);
+    }
+    9% {
+        filter: blur(5px) brightness(1);
+    }
+    10% {
+        filter: blur(5px) brightness(0);
+    }
+    20% {
+        filter: blur(5px) brightness(1);
+    }
+    50% {
+        filter: blur(5px) brightness(1);
+    }
+    75% {
+        filter: blur(5px) brightness(0);
+    }
+    100% {
+        filter: blur(5px) brightness(1);
+    }
+
+
+}
+body{
+    --var-color: rgb(0,238,255);
+    background: black;
+    text-align: center;
+    padding-top: 30px;
+}
